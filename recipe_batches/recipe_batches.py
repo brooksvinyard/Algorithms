@@ -3,7 +3,15 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  batches = []
+  #If we do not have all the ingredients, FAIL
+  if recipe.keys() != ingredients.keys():
+    return 0
+  # For each key in recipe, divide that from the number of ingredients with the same key
+  for i in recipe:
+    batches.append(ingredients[i]//recipe[i])
+
+  return min(batches) 
 
 
 if __name__ == '__main__':
